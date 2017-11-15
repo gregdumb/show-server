@@ -1,0 +1,20 @@
+
+body {
+	background-color: rgb(39, 39, 39);
+}
+
+a {
+	margin: 50px;
+}
+
+.header-div {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 30px;
+	background-color: red;
+}
+
+.button-div {
+	text-align: center;
+}

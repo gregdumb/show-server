@@ -1,0 +1,8 @@
+show-editor/
+.vs/
+
+data/projects/*
+data/audio/*
+data/shows/*
+
+!data/**/we_wish_you_a_merry_christmas_(default).*
