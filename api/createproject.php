@@ -1,10 +1,12 @@
 <?php
 
+include "config.php";
+
 $errors = array();
 
-$audio_dir = "../data/audio/";
-$project_dir = "../data/projects/";
-$show_dir = "../data/shows/";
+$audio_dir = $AUDIO_DIR; //"../data/audio/";
+$project_dir = $PROJECT_DIR; // "../data/projects/";
+$show_dir = $SHOW_DIR; //"../data/shows/";
 
 
 function addError($newError) {

@@ -1,3 +1,6 @@
 [submodule "show-editor"]
 	path = show-editor
 	url = https://github.com/gregdumb/show-editor.git
+[submodule "show-player"]
+	path = show-player
+	url = https://github.com/gregdumb/show-player.git

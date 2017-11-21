@@ -1,14 +1,11 @@
 <?php
 
-$id = $_GET["id"];
-$match = "../data/audio/" . $id . ".*";
+include "config.php";
 
-$audio_paths = glob($match, GLOB_BRACE);
-
-if(count($audio_paths) > 0) {
+if(!empty($_GET["id"])) {
+	$id = $_GET["id"];
 	
-	$path = basename($audio_paths[0]);
-	print($path);
+	echo get_audio($id);
 }
 
 ?>
