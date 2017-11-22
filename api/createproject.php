@@ -4,9 +4,9 @@ include "config.php";
 
 $errors = array();
 
-$audio_dir = $AUDIO_DIR; //"../data/audio/";
-$project_dir = $PROJECT_DIR; // "../data/projects/";
-$show_dir = $SHOW_DIR; //"../data/shows/";
+$audio_dir = "../data/audio/";
+$project_dir = "../data/projects/";
+$show_dir = "../data/shows/";
 
 
 function addError($newError) {
@@ -94,10 +94,10 @@ if(count($errors) == 0) {
 	print("Project created");
 }
 else {
-	/*echo "The following errors were encountered:\n";
+	echo "The following errors were encountered:\n";
 	foreach($errors as $error) {
 		echo $error;
-	}*/
+	}
 	print("There was an error creating your project");
 }
 
