@@ -4,8 +4,6 @@ include "config.php";
 
 $project_array = array();
 
-echo $PROJECT_DIR;
-
 $project_paths = glob($PROJECT_DIR . "*.json", GLOB_BRACE);
 
 foreach ($project_paths as $path) {
