@@ -5,6 +5,7 @@ $(document).ready(function () {
 	
 	updateRemoteProjectList();
 	
+	// Play button
 	$("#btn-play-show").on("click", function() {
 		
 		var newShow = $("#select-show").val();
@@ -14,6 +15,11 @@ $(document).ready(function () {
 		});
 		
 		console.log(newShow);
+	});
+	
+	// Stop button
+	$("#btn-stop").on("click", function() {
+		$.get("./api/killall.php");
 	});
 });
 
