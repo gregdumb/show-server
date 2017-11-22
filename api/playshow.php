@@ -13,11 +13,13 @@ $show = realpath($SHOW_DIR . $id . ".txt");
 
 if(file_exists($show)) {
 	
-	$command = "python " . $PY_PLAY . " " . $audio . " " . $show;
+	$command = "python " . realpath($PY_PLAY) . " " . $audio . " " . $show;
 	
-	echo "playing";
-
-	System($command);
+	$resource = popen($command, "r"); //"python ../show-player/test.py 2>&1", "r");
+	
+	$read = fread($resource, 2096);
+	echo $read;
+	pclose($resource);
 }
 else {
 	echo "not found";
