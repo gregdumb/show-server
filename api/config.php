@@ -9,7 +9,8 @@ $SHOW_DIR = ("../data/shows/");
 
 // Python scripts
 $PY_PLAY = "../show-player/playshow.py";
-
+$PY_PLAYALL = "../show-player/playall.py";
+$PY_STOP = "../show-player/stopall.py";
 
 function get_audio($project_id) {
 	

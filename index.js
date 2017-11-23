@@ -17,6 +17,16 @@ $(document).ready(function () {
 		console.log(newShow);
 	});
 	
+	// Play all button
+	$("#btn-play-all").on("click", function() {
+		
+		$.get("./api/killall.php", function(data) {
+			$.get("./api/playall.php");
+		});
+		
+		
+	});
+	
 	// Stop button
 	$("#btn-stop").on("click", function() {
 		$.get("./api/killall.php");
