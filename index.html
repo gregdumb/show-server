@@ -9,23 +9,28 @@
 			<h1>Light Show Manager</h1>
 		</div>
 		
-		<div class="button-div">
-			<a class="waves-effect waves-light btn-large" href="#">Play all</a>
-			<a class="waves-effect waves-light btn-large" href="./show-editor">Edit shows</a>
-		</div>
-		
-		<div class="show-div">
-			<p>Select a show to play</p>
-		
-			<div class="input-field col s12">
-				<select id="select-show">
-				</select>
-				<label>Materialize Select</label>
-			</div>
+		<div class="body-div">
+			<div class="show-div">
+				<p>Select a show to play</p>
 			
-			<a class="waves-effect waves-light btn" id="btn-play-show">Play song</a>
-			<a class="waves-effect waves-light btn" id="btn-play-all">Play all</a>
-			<a class="waves-effect waves-light btn red" id="btn-stop">Stop</a>
+				<div class="input-field col s12">
+					<select id="select-show">
+					</select>
+					<label>Show</label>
+				</div>
+				
+				<table>
+					<tr>
+						<td><a class="waves-effect waves-light btn col s6" id="btn-play-show">Play song</a></td>
+						<td><a class="waves-effect waves-light btn col s6" id="btn-play-all">Play all</a></td>
+					</tr>
+					<tr>
+						<td><a class="waves-effect waves-light btn red col s6" id="btn-stop">Stop</a></td>
+						<td><a class="waves-effect waves-light btn blue col s6" id="btn-edit" href="./show-editor">Edit shows</a></td>
+					</tr>
+				</table>
+				
+			</div>
 		</div>
 		
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

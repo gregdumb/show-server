@@ -15,11 +15,7 @@ if(file_exists($show)) {
 	
 	$command = "python " . realpath($PY_PLAY) . " " . $audio . " " . $show;
 	
-	$resource = popen($command, "r"); //"python ../show-player/test.py 2>&1", "r");
-	
-	$read = fread($resource, 2096);
-	echo $read;
-	pclose($resource);
+	$pid = shell_exec(sprintf('%s > /dev/null 2>&1 & echo $!', $command));
 }
 else {
 	echo "not found";
