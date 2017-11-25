@@ -11,6 +11,7 @@ $SHOW_DIR = ("../data/shows/");
 $PY_PLAY = "../show-player/playshow.py";
 $PY_PLAYALL = "../show-player/playall.py";
 $PY_STOP = "../show-player/stopall.py";
+$PY_SPARKLE = "../show-player/sparkle.py";
 
 function get_audio($project_id) {
 	

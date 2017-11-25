@@ -31,6 +31,11 @@ $(document).ready(function () {
 	$("#btn-stop").on("click", function() {
 		$.get("./api/killall.php");
 	});
+	
+	// Sparkle button
+	$("#btn-sparkle").on("click", function() {
+		$.get("./api/run.php?cmd=sparkle");
+	});
 });
 
 
