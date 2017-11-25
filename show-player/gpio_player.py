@@ -25,6 +25,10 @@ def execute_pinout(states):
         else:
             GPIO.output(pins[i], ON)
 
+def set_state(onoff):
+    new_states = [onoff for element in pins]
+    execute_pinout(new_states)
+
 def play_show(audio_path, show_path):
     # Open show file
     event_raw = []
