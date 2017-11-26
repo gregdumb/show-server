@@ -29,7 +29,17 @@ $(document).ready(function () {
 	
 	// Stop button
 	$("#btn-stop").on("click", function() {
-		$.get("./api/killall.php");
+		$.get("./api/run.php?cmd=stop&state=0");
+	});
+	
+	// On button
+	$("#btn-on").on("click", function() {
+		$.get("./api/run.php?cmd=stop&state=1");
+	});
+	
+	// Off button
+	$("#btn-off").on("click", function() {
+		$.get("./api/run.php?cmd=stop&state=0");
 	});
 	
 	// Sparkle button

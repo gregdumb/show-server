@@ -25,7 +25,14 @@ if($cmd == "sparkle") {
 }
 else if($cmd == "stop") {
 	echo "Stopping";
-	$command = "python " . realpath($PY_STOP);
+	
+	$state = "0";
+	
+	if(!empty($_GET["state"])) {
+		$state = $_GET["state"];
+	}
+	
+	$command = "python " . realpath($PY_STOP) . " " . $state;
 }
 
 else {

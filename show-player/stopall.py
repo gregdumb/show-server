@@ -1,17 +1,22 @@
 import gpio_player
 import psutil
 import os
+import sys
 
 PROCNAME = "python"
 
-print("Killing")
+new_state = 0
 
-gpio_player.set_state(0)
+if(len(sys.argv) >= 2):
+	if(sys.argv[1] == "1"):
+		new_state = 1
+
+print("Killing")
 
 for proc in psutil.process_iter():
 	# check whether the process name matches
-	print(proc)
+	#print(proc)
 	if PROCNAME == proc.name() and proc.pid != os.getpid():
 		proc.kill()
 
-gpio_player.set_state(0)
+gpio_player.set_state(new_state)

@@ -7,6 +7,7 @@ OFF = GPIO.LOW
 
 pins = [5,17,18,27,22,23,24,25]  #4, 17, 27, 22, 5, 6, 13, 26]
 
+GPIO.setwarnings(False) # REMOVE IF YOU HAVE TO TROUBLESHOOT
 GPIO.setmode(GPIO.BCM)
 
 for pin in pins:
@@ -17,7 +18,7 @@ for pin in pins:
 
 def execute_pinout(states):
     int_states = [int(numeric_string) for numeric_string in states]
-    print(str(int_states))
+    #print(str(int_states))
     max_range = min(len(pins), len(states))
     for i in range(0, max_range):
         if int_states[i] == 0:
@@ -26,7 +27,8 @@ def execute_pinout(states):
             GPIO.output(pins[i], ON)
 
 def set_state(onoff):
-    new_states = [onoff for element in pins]
+    print("Setting all channels to " + str(onoff))
+    new_states = [int(onoff) for element in pins]
     execute_pinout(new_states)
 
 def play_show(audio_path, show_path):
@@ -40,7 +42,6 @@ def play_show(audio_path, show_path):
     # Play music
     mixer.pre_init(44100, -16, 2, 2048)
     mixer.init()
-    print("loading music")
     mixer.music.load(audio_path)
     
     mixer.music.play()
@@ -70,4 +71,5 @@ def play_show(audio_path, show_path):
                 break
     
     mixer.music.fadeout(1000)
+    time.sleep(1)
     execute_pinout([1,1,1,1,1,1,1,1])

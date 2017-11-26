@@ -5,11 +5,12 @@ import glob
 import ntpath
 import gpio_player
 
-if(len(sys.argv) < 3):
-   sys.exit()
-
-SONG_FOLDER = sys.argv[1]
-SHOW_FOLDER = sys.argv[2]
+if(len(sys.argv) >= 3):
+    SONG_FOLDER = sys.argv[1]
+    SHOW_FOLDER = sys.argv[2]
+else:
+    SONG_FOLDER = "../data/audio/"
+    SHOW_FOLDER = "../data/shows/"
 
 LOOPING = False
 
@@ -17,7 +18,10 @@ if(len(sys.argv) > 3):
     if(sys.argv[3] == "1"):
         LOOPING = True
 
-print("LOOPING: " + str(LOOPING))
+if(LOOPING):
+    print("Looping")
+else:
+    print("Not looping")
 
 show_query = SHOW_FOLDER + "*.txt"
 
@@ -29,11 +33,12 @@ while True:
         showfile = ntpath.basename(showpath)
         showid = os.path.splitext(showfile)[0]
         
+        print("Playing " + showid)
         songpath = glob.glob(SONG_FOLDER + showid + ".*")[0]
         
         gpio_player.play_show(songpath, showpath)
         
-        time.sleep(3)
+        time.sleep(10)
     
     if(LOOPING != True):
         break
