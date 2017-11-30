@@ -9,8 +9,8 @@ if(len(sys.argv) >= 3):
     SONG_FOLDER = sys.argv[1]
     SHOW_FOLDER = sys.argv[2]
 else:
-    SONG_FOLDER = "../data/audio/"
-    SHOW_FOLDER = "../data/shows/"
+    SONG_FOLDER = "/var/www/html/show-server/data/audio/"
+    SHOW_FOLDER = "/var/www/html/show-server/data/shows/"
 
 LOOPING = False
 
