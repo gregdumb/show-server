@@ -12,11 +12,11 @@ else:
     SONG_FOLDER = "/var/www/html/show-server/data/audio/"
     SHOW_FOLDER = "/var/www/html/show-server/data/shows/"
 
-LOOPING = False
+LOOPING = True
 
 if(len(sys.argv) > 3):
-    if(sys.argv[3] == "1"):
-        LOOPING = True
+    if(sys.argv[3] == "0"):
+        LOOPING = False
 
 if(LOOPING):
     print("Looping")
